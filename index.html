@@ -8,12 +8,13 @@
   </head>
   <body>
 
-    <div ng-app="PinTheTail"></div>
-    <!-- will add navbar partial here -->
+    <div ng-app="PinTheTail">
 
-    <div ng-view>   </div>
+      <div ng-include="'partials/navbar.html'"></div>
 
+      <div ng-view></div>
 
+    </div>
 
 
   <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
@@ -34,7 +35,7 @@
   <script type="text/javascript" src="app/controllers/editPinCtrl.js"></script>
   <script type="text/javascript" src="app/controllers/homeCtrl.js"></script>
   <script type="text/javascript" src="app/controllers/navCtrl.js"></script>
-  <script type="text/javascript" src="app/controllers/PmViewCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/PinViewCtrl.js"></script>
   <script type="text/javascript" src="app/controllers/userViewCtrl.js"></script>
 </body>
 </html>
