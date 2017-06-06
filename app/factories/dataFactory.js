@@ -7,7 +7,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 //*************
 const addPin = (pinObj) => {
 	return $q((resolve, reject) => {
-		$http.post(`${FBCreds.databaseURL}/pins.json`, object)
+		$http.post(`${FBCreds.databaseURL}/pins.json`, pinObj)
 		.then ((pinID) => {
 			resolve(pinID);
 		})
@@ -29,8 +29,6 @@ const createPin = (newObj) => {
 		});
 	});
 };
-
-const postToFB;
 
 const editPin = (pinID, editedPinObj) => {
 	return $q((resolve, reject) => {
@@ -60,7 +58,7 @@ const getPinObj = (pinID) => {
 const delPin = (pinID) => {
 	return $q((resolve, reject) => {
 		$http.delete(`${FBCreds.databaseURL}/pins/${pinID}.json`)
-		.then((reponse) => {
+		.then((response) => {
 			resolve(response);
 		})
 		.catch((error) => {
@@ -83,7 +81,7 @@ const getPin = (pinID) => {
 
 const getAllPins = (user) => {
 	let pins = [];
-	return$q((resolve, reject) => {
+	return $q((resolve, reject) => {
 		$http.get(`${FBCreds.databaseURL}pins.json?orderBy="uid"&equalTo="${user}"`)
 		.then((pinObjs) => {
 			let pinCollection = pinObjs.data;
@@ -105,7 +103,7 @@ const getAllPins = (user) => {
 
 const addBoard = (boardObj) => {
 	return $q((resolve, reject) => {
-		$http.post(`${FBCreds.databaseURL}/boards.json`, object)
+		$http.post(`${FBCreds.databaseURL}/boards.json`, boardObj)
 		.then ((boardID) => {
 			resolve(boardID);
 		})
@@ -156,7 +154,7 @@ const getBoardObj = (boardID) => {
 const delBoard = (boardID) => {
 	return $q((resolve, reject) => {
 		$http.delete(`${FBCreds.databaseURL}/boards/${boardID}.json`)
-		.then((reponse) => {
+		.then((response) => {
 			resolve(response);
 		})
 		.catch((error) => {
@@ -180,7 +178,7 @@ const getBoard = (boardID) => {
 
 const getAllBoards = (user) => {
 	let boards = [];
-	return$q((resolve, reject) => {
+	return $q((resolve, reject) => {
 		$http.get(`${FBCreds.databaseURL}boards.json?orderBy="uid"&equalTo="${user}"`)
 		.then((boardObjs) => {
 			let boardCollection = boardObjs.data;
