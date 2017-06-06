@@ -1,0 +1,16 @@
+{
+    "items": [
+    {
+      "title": "hats",
+      "name": "cowboy",
+      "description": "big rim, no feather!",
+      "img": ""
+    },
+    {
+      "title": "hats",
+      "name": "baseball",
+      "description": "adjustable back",
+      "img": ""
+    }
+  ]
+}
