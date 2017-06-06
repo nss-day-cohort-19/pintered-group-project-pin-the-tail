@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="lib/node_modules/materialize-css/dist/css/materialize.min.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
   </head>
-  <body>
+  <body id="PinTheTailApp">
 
-    <div ng-app="PinTheTail">
+    <div ng-app="PinTheTailApp">
 
       <div ng-include="'partials/navbar.html'"></div>
 
@@ -24,6 +24,7 @@
   <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
 
   <script type="text/javascript" src="./app/app.js"></script>
+  <script type="text/javascript" src="/app/values/fb-creds.js"></script>
   <!-- FACTORIES -->
   <script type="text/javascript" src="app/factories/authFactory.js"></script>
   <script type="text/javascript" src="app/factories/dataFactory.js"></script>
