@@ -2,43 +2,67 @@
 
 const app = angular.module('TodoApp', ["ngRoute"]);
 
+let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
+    AuthFactory.isAutheticated() 
+    .then((userExists) => {
+        if(userExists){
+            console.log("Authenticated, go ahead");
+            resolve();
+        }else {
+            console.log("Authentication reject, GO AWAY");
+            reject();
+        }
+    });
+});
+
 app.config( ($routeProvider) => {
 	$routeProvider
 	.when('/', {
 		templateUrl: 'partials/home.html',
 		controller: 'HomeCtrl'
 	})
-	.when('/auth', {
+	.when('/login', {
+		templateUrl: 'partials/auth.html',
+		controller: 'AuthCtrl'
+	})
+	.when('/logout', {
 		templateUrl: 'partials/auth.html',
 		controller: 'AuthCtrl'
 	})
 	.when('/user', {
 		templateUrl: 'partials/user-view.html',
-		controller: 'UserViewCtrl'
+		controller: 'UserViewCtrl',
+		resolve: {isAuth}
 	})
 	.when('/boards', {
 		templateUrl: 'partials/board-view.html',
-		controller: 'BoardViewCtrl'
+		controller: 'BoardViewCtrl',
+		resolve: {isAuth}
 	})
 	.when('/pin', {
 		templateUrl: 'partials/pin-view.html',
-		controller: 'PinViewCtrl'
+		controller: 'PinViewCtrl',
+		resolve: {isAuth}
 	})
 	.when('/addBoard', {
 		templateUrl: 'partials/add-editForm.html',
-		controller: 'AddBoardCtrl'
+		controller: 'AddBoardCtrl',
+		resolve: {isAuth}
 	})
 	.when('/editBoard', {
 		templateUrl: 'partials/add-editForm.html',
-		controller: 'EditBoardCtrl'
+		controller: 'EditBoardCtrl',
+		resolve: {isAuth}
 	})
 	.when('/addPin', {
 		templateUrl: 'partials/add-editForm.html',
-		controller: 'AddPinCtrl'
+		controller: 'AddPinCtrl',
+		resolve: {isAuth}
 	})
 	.when('/editPin', {
 		templateUrl: 'partials/add-editForm.html',
-		controller: 'EditPinCtrl'
+		controller: 'EditPinCtrl',
+		resolve: {isAuth}
 	})
 	.otherwise('/');
 });
