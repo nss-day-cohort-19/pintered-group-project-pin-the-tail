@@ -52,4 +52,8 @@ app.run(($location, FBCreds) => {
 	};
 
 	firebase.initializeApp(authConfig);
+
+document.getElementById("PinTheTailApp").addEventListener("click", function(event){
+        console.log(event);
+    });
 });
