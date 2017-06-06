@@ -1,7 +1,6 @@
 "use strict";
 
 let currentUser = null;
-let provider = firebase //this may need to changed.
 
 let createUser = function(userObj){
     return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)

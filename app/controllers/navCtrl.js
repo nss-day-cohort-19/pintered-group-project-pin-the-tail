@@ -6,7 +6,6 @@
 app.controller('NavCtrl', function($scope, AuthFactory, $window) {
 
   $scope.isLoggedIn = false;
-  $scope.searchText = SearchTermData;
 
   firebase.auth().onAuthStateChanged(function(user){
     if(user){
@@ -16,7 +15,7 @@ app.controller('NavCtrl', function($scope, AuthFactory, $window) {
     }else{
       $scope.isLoggedIn = false;
       console.log("user logged in", $scope.isLoggedIn);
-      $window.locaiton.href = "#!/login"
+      $window.locaiton.href = "#!/login";
     }
   });
 });
