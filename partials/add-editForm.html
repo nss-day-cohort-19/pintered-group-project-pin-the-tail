@@ -1,2 +1,24 @@
 <!-- will need add/edit/del btns. modal on this page, may need to be modal
 on top of modal. may not be possible??? -->
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Title" id="title" type="text" class="validate" ng-model="obj.title">
+          <label for="title">Title</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="description" type="text" class="materialize-textarea" ng-model="obj.description"></textarea>
+          <label for="description">Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Paste an Image Link here!" id="image" type="text" class="validate" ng-model="obj.image">
+          <label for="image">Upload Image</label>
+        </div>
+      </div>
+    </form>
+  </div>
