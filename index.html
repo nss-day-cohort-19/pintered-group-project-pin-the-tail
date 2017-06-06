@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pin The Tail</title>
+    <link rel="stylesheet" type="text/css" href="lib/node_modules/materialize-css/dist/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  </head>
+  <body>
+
+    <div ng-app="PinTheTail"></div>
+    <!-- will add navbar partial here -->
+
+    <div ng-view>   </div>
+
+
+
+
+  <script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="./lib/node_modules/firebase/firebase.js"></script>
+
+  <script type="text/javascript" src="./app/app.js"></script>
+  <!-- FACTORIES -->
+  <script type="text/javascript" src="app/factories/authFactory.js"></script>
+  <script type="text/javascript" src="app/factories/dataFactory.js"></script>
+  <!-- CONTROLLERS -->
+  <script type="text/javascript" src="app/controllers/authCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/addBoardCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/addPinCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/boardViewCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/editPinCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/homeCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/navCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/PmViewCtrl.js"></script>
+  <script type="text/javascript" src="app/controllers/userViewCtrl.js"></script>
+</body>
+</html>
