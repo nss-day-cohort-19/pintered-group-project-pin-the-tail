@@ -1,6 +1,6 @@
 "use strict";
 
-const app = angular.module('TodoApp', ["ngRoute"]);
+const app = angular.module('PinTheTail', ["ngRoute"]);
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
     AuthFactory.isAutheticated() 
