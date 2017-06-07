@@ -1,8 +1,9 @@
 "use strict";
 
+console.log("CreateBoardCtrl");
 //bind boardObj to user input
 //submit btn calls addBoard, ($scope.boardObj)  
-app.controller('AddBoardCtrl', function($scope, DataFactory, $location, AuthFactory) {
+app.controller('CreateBoardCtrl', function($scope, DataFactory, $location, AuthFactory) {
 
   let user = AuthFactory.getUser();
 
@@ -13,12 +14,15 @@ app.controller('AddBoardCtrl', function($scope, DataFactory, $location, AuthFact
 	image: ""
 	};
 
-  $scope.submitPin = function () {
+  $scope.submit = function () {
     // stuff goes here
     console.log("$scope.obj", $scope.obj);
-    DataFactory.addPin($scope.obj)
+    DataFactory.createBoard($scope.obj)
     .then ((data) => {
-    	$location.path("/addPin");
+      console.log("data", data);
+    	$location.path("/boards");
     });
   };
+
+  console.log("getUser",user);
 });

@@ -1,13 +1,13 @@
 "use strict";
 console.log("boardViewCtrl is working");
 
-app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $location) {
+app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $location, AuthFactory) {
 
-  let user = $scope.$parent.getUser();
+  let user = AuthFactory.getUser();
   let boardId = [];
 
 
-  DataFactory.getUserBoards(user)
+  DataFactory.getAllBoards(user)
     .then( (boards) => {
       $scope.boards = boards;
       console.log("boards", $scope.boards);
