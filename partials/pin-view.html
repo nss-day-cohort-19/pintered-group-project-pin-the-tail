@@ -1,17 +1,18 @@
   <div class="row">
     <div class="col s12 m6">
-      <div class="card">
+     <div class="card">
         <div class="card-image">
-          <img src="{obj.image}">
-          <span class="card-title" ng-model="obj.title">Card Title</span>
+          <img ng-src="{{item.img}}">
+          <span class="card-title black-text">{{item.title}}</span>
           <a class="btn-floating btn-small red" href="#/{{board.id}}/edit">
       <i class="medium material-icons">mode_edit</i>
           </a>
           </div>
         <div class="card-content">
-          <p ng-model="obj.description"></p>
+          <p>{{item.name}}<br>{{item.title}}<br>{{item.description}}</p>
         </div>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">delete</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light red" ng-click="delPin()"><i class="material-icons">delete</i></a>
       </div>
     </div>
   </div>
+

@@ -5,26 +5,22 @@ app.controller('PinViewCtrl', function($scope, $location, $routeParams, DataFact
 	console.log("$routeParams", $routeParams.pinID);
 
 	let user = AuthFactory.getUser();
+	let pinID = $routeParams.pinID
 
-  $scope.getPin = function() {
-    // stuff goes here
-    console.log("running getPin from PinViewCtrl");
-    DataFactory.getPin($routeParams.pinID)
-    .then( (stuff) => {
-    	$scope.obj = stuff;
-    	$scope.obj.id = $routeParams.pinID;
-
+	DataFactory.getPin(pinID)
+    .then( (items) => {
+      $scope.item = items;
+      console.log("this is the new data", $scope.item);
     });
-  };
 
-  $scope.delPin = function ( pinID ) {
+
+  $scope.delPin = function () {
     // remove a task
-    DataFactory.removeTask( pinID )
-    .then( () => {
-      $scope.getAllPins();
-    });
+    console.log("this is the pin you want to delete", pinID);
+    DataFactory.delPin( pinID )
+
+		.then(function(){
+        $location.path("/board-View");
+      });
   };
-
-  $scope.getPin();
-
 });
