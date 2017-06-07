@@ -1,7 +1,7 @@
 "use strict";
 console.log("boardViewCtrl is working");
 
-app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $location, AuthFactory) {
+app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $location, AuthFactory, $route) {
 
   let user = AuthFactory.getUser();
   let boardId = [];
@@ -18,7 +18,7 @@ app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $lo
     // console.log("boardId", boardId);
     DataFactory.deleteYourBoard(boardId)
       .then(function(){
-        $location.url("#/board-View");
+        $route.reload();
       });
   };
 });
