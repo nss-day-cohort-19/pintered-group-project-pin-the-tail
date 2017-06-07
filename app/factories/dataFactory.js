@@ -127,13 +127,13 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 		});
 	};
 
-	const delBoard = (boardID) => {
-		return $q((resolve, reject) => {
+	const deleteYourBoard = (boardID) => {
+		return $q ( (resolve, reject) => {
 			$http.delete(`${FBCreds.databaseURL}/boards/${boardID}.json`)
-			.then((response) => {
+			.then( (response) => {
 				resolve(response);
 			})
-			.catch((error) => {
+			.catch( (error) => {
 				reject(error);
 			});
 		});
@@ -143,8 +143,8 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 	const getBoard = (boardID) => {
 		return $q((resolve, reject) => {
 			$http.get(`${FBCreds.databaseURL}/boards/${boardID}.json`)
-			.then((boardObj) => {
-				resolve(boardObj.data);
+			.then((response) => {
+				resolve(response);
 			})
 			.catch((error) => {
 				reject(error);
@@ -181,7 +181,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 		addBoard,
 		createBoard,
 		editBoard,
-		delBoard,
+		deleteYourBoard,
 		getBoard,
 		getAllBoards
 	};

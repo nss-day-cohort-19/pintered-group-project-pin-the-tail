@@ -13,9 +13,10 @@ app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $lo
       console.log("boards", $scope.boards);
     });
 
-  $scope.deleteYourBoard = function(boardId) {
+
+  $scope.delBoard = function(boardId) {
     // console.log("boardId", boardId);
-    DataFactory.deleteABoard(boardId)
+    DataFactory.deleteYourBoard(boardId)
       .then(function(){
         $location.url("#/board-View");
       });
