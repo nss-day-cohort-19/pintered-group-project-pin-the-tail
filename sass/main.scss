@@ -32,6 +32,7 @@ body{
   background-color: #fff;
   margin: auto;
   padding: 5px;
+  padding-bottom: 7px;
 }
 
 #close-btn{
@@ -44,4 +45,16 @@ body{
   font-family: $header-font;
   color: #E0FFFF;
   font-size: 3em;
+}
+
+#auth-box{
+  background-color: #fff;
+  padding: 1.25em;
+  color: $primary-color;
+  margin: auto;
+  box-shadow: 1px 1.25px lightgrey;
+}
+
+button{
+  background-color: #2199E2 !important;
 }
