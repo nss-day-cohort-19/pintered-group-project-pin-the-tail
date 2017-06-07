@@ -13,7 +13,7 @@ app.controller('AddBoardCtrl', function($scope, DataFactory, $location, AuthFact
 	image: ""
 	};
 
-  $scope.submitTask = function () {
+  $scope.submitBoard = function () {
     // stuff goes here
     console.log("$scope.obj", $scope.obj);
     DataFactory.addBoard($scope.obj)
@@ -21,4 +21,8 @@ app.controller('AddBoardCtrl', function($scope, DataFactory, $location, AuthFact
     	$location.path("/addBoard");
     });
   };
+
+  $scope.getAllBoards(user);
+  console.log("$scope.getAllBoards",$scope.getAllBoards());
+  console.log("getUser",$scope.getUser());
 });

@@ -18,8 +18,8 @@ let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
 app.config( ($routeProvider) => {
 	$routeProvider
 	.when('/', {
-		templateUrl: 'partials/home.html',
-		controller: 'HomeCtrl'
+		templateUrl: 'partials/board-view.html',
+		controller: 'BoardViewCtrl'
 	})
 	.when('/login', {
 		templateUrl: 'partials/auth.html',
@@ -31,38 +31,43 @@ app.config( ($routeProvider) => {
 	})
 	.when('/user', {
 		templateUrl: 'partials/user-view.html',
-		controller: 'UserViewCtrl',
-		resolve: {isAuth}
+		controller: 'UserViewCtrl'/*,
+		resolve: {isAuth}*/
 	})
 	.when('/boards', {
 		templateUrl: 'partials/board-view.html',
-		controller: 'BoardViewCtrl',
-		resolve: {isAuth}
+		controller: 'BoardViewCtrl'/*,
+		resolve: {isAuth}*/
 	})
 	.when('/pin', {
 		templateUrl: 'partials/pin-view.html',
-		controller: 'PinViewCtrl',
-		resolve: {isAuth}
+		controller: 'PinViewCtrl'/*,
+		resolve: {isAuth}*/
 	})
 	.when('/addBoard', {
 		templateUrl: 'partials/add-editForm.html',
-		controller: 'AddBoardCtrl',
-		resolve: {isAuth}
-	})
+		controller: 'AddBoardCtrl'/*,
+		resolve: {isAuth}*/
+			})
 	.when('/editBoard', {
 		templateUrl: 'partials/add-editForm.html',
-		controller: 'EditBoardCtrl',
-		resolve: {isAuth}
+		controller: 'EditBoardCtrl'/*,
+		resolve: {isAuth}*/
 	})
 	.when('/addPin', {
 		templateUrl: 'partials/add-editForm.html',
-		controller: 'AddPinCtrl',
-		resolve: {isAuth}
+		controller: 'AddPinCtrl'/*,
+		resolve: {isAuth}*/
 	})
 	.when('/editPin', {
 		templateUrl: 'partials/add-editForm.html',
-		controller: 'EditPinCtrl',
-		resolve: {isAuth}
+		controller: 'EditPinCtrl'/*,
+		resolve: {isAuth}*/
+	})
+	.when('/createBoard', {
+		templateUrl: 'partials/add-editForm.html',
+		controller: 'CreateBoardCtrl'
+		// resolve: {isAuth}
 	})
 	.otherwise('/');
 });

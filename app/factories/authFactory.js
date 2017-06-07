@@ -36,7 +36,7 @@ let isAuthenticated = function (){
         firebase.auth().onAuthStateChanged( (user) => {
             if (user){
                 currentUser = user.uid;
-                console.log("user", user.uid);
+                console.log("user", currentUser);
                 resolve(true);
             }else {
                 resolve(false);
