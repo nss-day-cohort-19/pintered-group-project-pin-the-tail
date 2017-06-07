@@ -3,7 +3,7 @@
 const app = angular.module('PinTheTailApp', ["ngRoute"]);
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
-    AuthFactory.isAutheticated() 
+    AuthFactory.isAutheticated()
     .then((userExists) => {
         if(userExists){
             console.log("Authenticated, go ahead");
@@ -39,7 +39,7 @@ app.config( ($routeProvider) => {
 		controller: 'BoardViewCtrl'/*,
 		resolve: {isAuth}*/
 	})
-	.when('/pin', {
+	.when('/pin/:pinID', {
 		templateUrl: 'partials/pin-view.html',
 		controller: 'PinViewCtrl'/*,
 		resolve: {isAuth}*/
