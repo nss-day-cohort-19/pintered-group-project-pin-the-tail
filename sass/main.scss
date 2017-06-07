@@ -1,5 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Faster+One');
+
+
+//COLORS
+$primary-color: #711;
+$secondary-color: #a6172d;
+
+//FONTS
+
+$main-font: 'Raleway', sans-serif;
+$header-font: 'Faster One', cursive;
+
+//STYLING
+
+body{
+  background-color: #fff;
+}
+
 .nav-wrapper {
-  background-color: firebrick;
+  background-color: $primary-color;
+  font-family: $main-font
 }
 
 #nav-mobile {
@@ -7,9 +27,12 @@
 }
 
 #search {
-  color: #fff;
-  border-top: 2px solid darkblue;
-  background-color: lightblue;
+  color: #000;
+  border: 2px solid #c72e45;
+  border-bottom: 4px solid #c72e45;
+  background-color: #fff;
+  margin: auto;
+  padding: 5px;
 }
 
 .auth-form{
@@ -18,4 +41,16 @@
 
 #sign-in-header {
   background-color: yellow;
+}
+
+#close-btn{
+  font-size: 1.25em;
+  text-align: center;
+  font-weight:600;
+}
+
+#brand-logo{
+  font-family: $header-font;
+  color: darkgrey;
+  font-size: 3em;
 }
