@@ -11,7 +11,7 @@ app.controller('NavCtrl', function($scope, AuthFactory, $window) {
     if(user){
       $scope.isLoggedIn = true;
       console.log("user logged in", user, $scope.isLoggedIn);
-      $scope.apply();
+      $scope.$apply();
     }else{
       $scope.isLoggedIn = false;
       console.log("user logged in", $scope.isLoggedIn);
