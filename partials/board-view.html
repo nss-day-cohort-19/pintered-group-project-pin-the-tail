@@ -8,7 +8,14 @@
         <h4>{{board.description}}</h4>
       </div>
       <button><a ng-href="#/{{board.id}}/edit">Edit Board</a></button>
-      <button> <a ng-click="deleteYourBoard(board.id)">Delete Board</a></button>
+      <button> <a ng-click="deleteYourBoard({{board.id}})">Delete Board</a></button>
     </div>
   </div>
+</div>
+<div class="panel panel-default" >
+      <button><a href="#!/createBoard"><div class="panel-body">
+        <h3>Create Board</h3>
+      </div>
+      </a>
+      </button>
 </div>
