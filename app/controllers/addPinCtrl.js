@@ -6,6 +6,8 @@ app.controller('AddPinCtrl', function($scope, DataFactory, $location, AuthFactor
 
   let user = AuthFactory.getUser();
 
+  $scope.boardId = $routeParams.boardID;
+
   console.log("$rP.BID", $routeParams.boardID);
 
   $scope.obj = {
@@ -21,7 +23,7 @@ app.controller('AddPinCtrl', function($scope, DataFactory, $location, AuthFactor
     console.log("$scope.obj", $scope.obj);
     DataFactory.addPin($scope.obj)
     .then ((data) => {
-    	$location.path("/addPin");
+    	$location.path(`/boards/${$routeParams.boardID}`);
     });
   };
 });

@@ -7,13 +7,13 @@ app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $lo
   let user = AuthFactory.getUser();
 
   $scope.boardId = $routeParams.boardID;
-  
 
+  console.log("$rP.bID", $routeParams.boardID);
 
-  DataFactory.getAllBoardPins($scope.boardId)
+  DataFactory.getAllBoardPins($routeParams.boardID)
     .then((pins) => {
-      $scope.pinss = pins;
-      console.log("pins", $scope.pinss);
+      $scope.pins = pins;
+      console.log("pins", $scope.pins);
     });
 
     $scope.goToEditView = (id) => {
@@ -22,7 +22,7 @@ app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $lo
 
 
   $scope.delPin = function(pinId) {
-    // console.log("boardId", boardId);
+    console.log("pinId", pinId);
     DataFactory.delPin(pinId)
       .then(function(){
         $route.reload();
