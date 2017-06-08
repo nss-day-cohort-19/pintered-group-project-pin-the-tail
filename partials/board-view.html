@@ -4,10 +4,10 @@
   <div class="col-md-5 cold-md-offset-1">
     <div class="panel panel-default">
       <a ng-href="#!/pin/{{pin.id}}"><div class="panel-body">
-        <h3>{{pin.name}}</h3>
+        <h3>{{pin.title}}</h3>
         <h4>{{pin.description}}</h4>
       </div></a>
-      <button ng-click="editPin(pin.id)">Edit Board</button>
+      <button><a ng-href="#!/editPin/{{pin.id}}">Edit Board</a></button>
       <button ng-click="delPin(pin.id)">Delete Board</button>
     </div>
   </div>
