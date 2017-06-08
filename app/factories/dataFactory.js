@@ -44,8 +44,9 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 	}; //(pinID, pinObj)
 
 	const delPin = (pinID) => {
+		console.log(`${FBCreds.databaseURL}/pins/${pinID}.json`);
 		return $q((resolve, reject) => {
-			$http.delete(`${FBCreds.databaseURL}/items/${pinID}.json`)
+			$http.delete(`${FBCreds.databaseURL}/pins/${pinID}.json`)
 			.then((response) => {
 				resolve(response);
 			})
@@ -71,8 +72,9 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 
 	const getAllBoardPins = (boardID) => {
 		let pins = [];
+		console.log(`${FBCreds.databaseURL}/pins.json?orderBy="boardId"&equalTo="${boardID}"`);
 		return $q((resolve, reject) => {
-			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="key"&equalTo="${boardID}"`)
+			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="boardId"&equalTo="${boardID}"`)
 			.then((pinObjs) => {
 				let pinCollection = pinObjs.data;
 				Object.keys(pinCollection).forEach((key) => {
