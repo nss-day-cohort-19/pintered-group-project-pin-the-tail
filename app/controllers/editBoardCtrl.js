@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('EditBoardCtrl', function($scope, $routeParams, DataFactory, $location) {
+app.controller('EditBoardCtrl', function($scope, $routeParams, DataFactory, $location, $route) {
 
 	$scope.obj = {
 		title: "",
@@ -8,16 +8,21 @@ app.controller('EditBoardCtrl', function($scope, $routeParams, DataFactory, $loc
 		image: ""
 	};
 
-	DataFactory.getBoard($routeParams.boardID)
+	DataFactory.getBoard($routeParams.boardId)
 	.then((data) => {
 		$scope.obj = data;
-		$scope.obj.id = $routeParams.boardID;
+		$scope.obj.id = $routeParams.boardId;
+		console.log("$scope.obj", $scope.obj);
 	});
 
-	$scope.submitBoard = function() {
-		DataFactory.editBoard($routeParams.boardID, $scope.obj)
-		.then((response) => {
-			$location.path("editBoard");
+
+
+
+	$scope.editBoard = function(boardID) {
+	DataFactory.editYourBoard(boardID)
+		.then(function() {
+			// $route.reload();
+			// $location.path("editBoard");
 		});
 		console.log("obj", $scope.obj);
 		console.log("Edit board button clicked");

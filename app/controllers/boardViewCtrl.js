@@ -13,6 +13,10 @@ app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $lo
       console.log("boards", $scope.boards);
     });
 
+    $scope.goToEditView = (id) => {
+      $location.path(`/editBoards/${id}`);
+    };
+
 
   $scope.delBoard = function(boardId) {
     // console.log("boardId", boardId);
