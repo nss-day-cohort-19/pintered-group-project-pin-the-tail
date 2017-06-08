@@ -58,7 +58,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 
 	const getPin = (pinID) => {
 		return $q((resolve, reject) => {
-			$http.get(`${FBCreds.databaseURL}/items/${pinID}.json`)
+			$http.get(`${FBCreds.databaseURL}/pins/${pinID}.json`)
 			.then((pinObj) => {
 				pinObj.data.id= pinID;
 				resolve(pinObj.data);
