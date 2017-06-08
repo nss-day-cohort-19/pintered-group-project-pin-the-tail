@@ -16,6 +16,10 @@ app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $lo
       console.log("pins", $scope.pinss);
     });
 
+    $scope.goToEditView = (id) => {
+      $location.path(`/editBoards/${id}`);
+    };
+
 
   $scope.delPin = function(pinId) {
     // console.log("boardId", boardId);

@@ -57,4 +57,35 @@ body{
 
 button{
   background-color: #2199E2 !important;
+  color: white;
+}
+
+#login-area{
+  font-weight: 800;
+  font-family: $main-font;
+}
+
+.page-header {
+  font-family: $header-font;
+  color: $primary-color;
+  font-size: 2.25em;
+  margin: auto;
+  padding: 2em 3em;
+}
+
+#create-btn{
+  margin: 4em;
+  padding: 2em 3em;
+}
+
+.panel-body{
+  color: #fff;
+}
+footer{
+  background-color: $primary-color;
+  text-align: center;
+  font-family: $header-font;
+  color: #fff;
+  margin-top: 4em;
+  border-top: 0.5em solid $secondary-color; 
 }

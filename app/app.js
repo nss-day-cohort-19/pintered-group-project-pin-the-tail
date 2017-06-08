@@ -54,7 +54,7 @@ app.config( ($routeProvider) => {
 		controller: 'AddBoardCtrl'/*,
 		resolve: {isAuth}*/
 			})
-	.when('/editBoard', {
+	.when('/editBoard/:boardId', {
 		templateUrl: 'partials/add-editForm.html',
 		controller: 'EditBoardCtrl'/*,
 		resolve: {isAuth}*/
