@@ -72,7 +72,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 	const getAllPins = (user) => {
 		let pins = [];
 		return $q((resolve, reject) => {
-			$http.get(`${FBCreds.databaseURL}pins.json?orderBy="uid"&equalTo="${user}"`)
+			$http.get(`${FBCreds.databaseURL}/pins.json?orderBy="uid"&equalTo="${user}"`)
 			.then((pinObjs) => {
 				let pinCollection = pinObjs.data;
 				Object.keys(pinCollection).forEach((key) => {
@@ -157,7 +157,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 	const getAllBoards = (user) => {
 		let boards = [];
 		return $q((resolve, reject) => {
-			$http.get(`${FBCreds.databaseURL}boards.json?orderBy="uid"&equalTo="${user}"`)
+			$http.get(`${FBCreds.databaseURL}/boards.json?orderBy="uid"&equalTo="${user}"`)
 			.then((boardObjs) => {
 				let boardCollection = boardObjs.data;
 				Object.keys(boardCollection).forEach((key) => {
