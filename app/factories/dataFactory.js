@@ -103,14 +103,14 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 		});
 	};
 
-	const editBoard = (boardID, editedboardObj) => {
-		return $q((resolve, reject) => {
+	const editYourBoard = ( boardID, editedboardObj ) => {
+		return $q( ( resolve, reject ) => {
 			let newObj = JSON.stringify(editedboardObj);
-			$http.path(`${FBCreds.databaseURL}/boards/${boardID}.json`, newObj)
-			.then((boardObj) => {
-				resolve(boardObj);
+			$http.patch(`${FBCreds.databaseURL}/boards/${boardID}.json`, newObj)
+			.then( ( response ) => {
+				resolve(response);
 			})
-			.catch((error) => {
+			.catch( (error) => {
 				reject(error);
 			});
 		});
@@ -146,7 +146,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 		return $q((resolve, reject) => {
 			$http.get(`${FBCreds.databaseURL}/boards/${boardID}.json`)
 			.then((response) => {
-				resolve(response);
+				resolve(response.data);
 			})
 			.catch((error) => {
 				reject(error);
@@ -181,7 +181,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 		getAllPins,
 		addBoard,
 		createBoard,
-		editBoard,
+		editYourBoard,
 		deleteYourBoard,
 		getBoard,
 		getAllBoards
