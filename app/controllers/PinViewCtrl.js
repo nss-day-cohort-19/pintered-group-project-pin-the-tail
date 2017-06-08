@@ -5,7 +5,7 @@ app.controller('PinViewCtrl', function($scope, $location, $routeParams, DataFact
 	console.log("$routeParams", $routeParams.pinID);
 
 	let user = AuthFactory.getUser();
-	let pinID = $routeParams.pinID
+	let pinID = $routeParams.pinID;
 
 	DataFactory.getPin(pinID)
     .then( (items) => {

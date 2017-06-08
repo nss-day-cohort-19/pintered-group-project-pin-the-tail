@@ -3,18 +3,18 @@
 <div ng-repeat="board in boards">
   <div class="col-md-5 cold-md-offset-1">
     <div class="panel panel-default">
-      <div class="panel-body">
-        <h3>{{board.name}}</h3>
-        <h4>{{board.description}}</h4>
-      </div>
-      <button ng-click="edit(board.id)">Edit Board</button>
-      <button ng-click="delBoard(board.id)">Delete Board</button>
+      <a ng-href="#!/pin/{{pin.id}}"><div class="panel-body">
+        <h3>{{pin.name}}</h3>
+        <h4>{{pin.description}}</h4>
+      </div></a>
+      <button ng-click="editPin()">Edit Board</button>
+      <button ng-click="delPin()">Delete Board</button>
     </div>
   </div>
 </div>
 <div class="panel panel-default" >
-      <button><a href="#!/createBoard"><div class="panel-body">
-        <h3>Create Board</h3>
+      <button><a href="#!/addPin"><div class="panel-body">
+        <p>Create Board</p>
       </div>
       </a>
       </button>
