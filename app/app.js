@@ -19,7 +19,7 @@ app.config( ($routeProvider) => {
 	$routeProvider
 	.when('/', {
 		templateUrl: 'partials/board-view.html',
-		controller: 'BoardViewCtrl'
+		controller: 'UserViewCtrl'
 	})
 	.when('/login', {
 		templateUrl: 'partials/auth.html',
@@ -35,8 +35,13 @@ app.config( ($routeProvider) => {
 		resolve: {isAuth}*/
 	})
 	.when('/boards', {
+		templateUrl: 'partials/user-view.html',
+		controller: 'UserViewCtrl'/*,
+		resolve: {isAuth}*/
+	})
+	.when('/boards/:boardID', {
 		templateUrl: 'partials/board-view.html',
-		controller: 'BoardViewCtrl'/*,
+		controller: 'BoardViewCtrl'/*
 		resolve: {isAuth}*/
 	})
 	.when('/pin/:pinID', {
@@ -49,12 +54,12 @@ app.config( ($routeProvider) => {
 		controller: 'AddBoardCtrl'/*,
 		resolve: {isAuth}*/
 			})
-	.when('/editBoard', {
+	.when('/editBoard/:boardId', {
 		templateUrl: 'partials/add-editForm.html',
 		controller: 'EditBoardCtrl'/*,
 		resolve: {isAuth}*/
 	})
-	.when('/addPin', {
+	.when('/addPin/:boardID', {
 		templateUrl: 'partials/add-editForm.html',
 		controller: 'AddPinCtrl'/*,
 		resolve: {isAuth}*/
@@ -82,5 +87,8 @@ app.run(($location, FBCreds) => {
 
 	firebase.initializeApp(authConfig);
 
+	document.getElementById("PinTheTailApp").addEventListener("click", function(event){
+        console.log(event);
+    });
 
 });
