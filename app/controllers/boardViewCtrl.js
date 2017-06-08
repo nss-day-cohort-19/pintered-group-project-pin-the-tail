@@ -5,6 +5,8 @@ console.log("boardViewCtrl is working");
 app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $location, AuthFactory, $route) {
 
   let user = AuthFactory.getUser();
+
+  $scope.boardId = $routeParams.boardID;
   
 
 

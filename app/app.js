@@ -59,7 +59,7 @@ app.config( ($routeProvider) => {
 		controller: 'EditBoardCtrl'/*,
 		resolve: {isAuth}*/
 	})
-	.when('/addPin', {
+	.when('/addPin/:boardID', {
 		templateUrl: 'partials/add-editForm.html',
 		controller: 'AddPinCtrl'/*,
 		resolve: {isAuth}*/

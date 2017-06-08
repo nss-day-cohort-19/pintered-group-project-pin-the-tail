@@ -2,14 +2,14 @@
 
 //bind boardObj to user input
 //submit btn calls addBoard, ($scope.boardObj)  
-app.controller('AddBoardCtrl', function($scope, DataFactory, $location, AuthFactory, UserViewCtrl) {
+app.controller('AddPinCtrl', function($scope, DataFactory, $location, AuthFactory, $routeParams) {
 
   let user = AuthFactory.getUser();
 
-  console.log("$scope.boardId", $scope.boardId);
+  console.log("$rP.BID", $routeParams.boardID);
 
   $scope.obj = {
-  	boardId: $scope.boardId,
+  	boardId: $routeParams.boardID,
     uid: user,
     title: "",
 	description: "",

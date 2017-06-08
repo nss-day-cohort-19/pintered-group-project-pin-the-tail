@@ -4,8 +4,6 @@ console.log("UserViewCtrl is working");
 app.controller("UserViewCtrl", function ($scope, DataFactory, $routeParams, $location, AuthFactory, $route) {
 
   let user = AuthFactory.getUser();
-  let boardId = [];
-
 
   DataFactory.getAllBoards(user)
     .then( (boards) => {
@@ -23,7 +21,6 @@ app.controller("UserViewCtrl", function ($scope, DataFactory, $routeParams, $loc
   };
 
   $scope.stealBoardId = function(ID) {
-    boardId = ID;
   };
 
 });
