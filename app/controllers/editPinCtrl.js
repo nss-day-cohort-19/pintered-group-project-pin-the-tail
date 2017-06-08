@@ -8,18 +8,19 @@ app.controller('EditPinCtrl', function($scope, $routeParams, DataFactory, $locat
 		image: ""
 	};
 
-	DataFactory.getPin($routeParams.pinID)
+	DataFactory.getPin($routeParams.pinID, $scope.obj)
 	.then((data) => {
+		console.log('pinData', data);
 		$scope.obj = data;
 		$scope.obj.id = $routeParams.pinID;
 	});
 
-	$scope.submitBoard = function() {
-		DataFactory.editPin($routeParams.pinID, $scope.obj)
-		.then((response) => {
-			$location.path("editPin");
-		});
-		console.log("obj", $scope.obj);
-		console.log("Edit pin button clicked");
+	$scope.submit = function() {
+		console.log("scope.obj", $scope.obj);
+	DataFactory.editPin($routeParams.pinID, $scope.obj)
+		.then(function() {
+			$location.path(`/boards/${$scope.obj.boardId}`);
+	});
+		console.log("Edit board button clicked");
 	};
 });

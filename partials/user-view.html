@@ -4,12 +4,13 @@
 <div ng-repeat="board in boards">
   <div class="col-md-5 cold-md-offset-1">
     <div class="panel panel-default">
-      <a ng-click="stealBoardId(board.id)" ng-href="#!/boards/{{board.id}}"><div class="panel-body">
-        <h3>{{board.name}}</h3>
+      <a ng-href="#!/boards/{{board.id}}"><div class="panel-body">
+        <h3>{{board.title}}</h3>
         <h4>{{board.description}}</h4>
       </div></a>
-      <button ng-click="edit(board.id)">Edit Board</button>
-      <button ng-click="delBoard(board.id)">Delete Board</button>
+	  <!--<button ng-click="goToEditView(board.id)">Edit Board</button>-->
+	  <button><a ng-href="#!/editBoard/{{board.id}}">Edit Board</a></button>
+	  <button ng-click="delBoard(board.id)">Delete Board</button>
     </div>
   </div>
 </div>

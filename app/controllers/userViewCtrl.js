@@ -20,7 +20,8 @@ app.controller("UserViewCtrl", function ($scope, DataFactory, $routeParams, $loc
       });
   };
 
-  $scope.stealBoardId = function(ID) {
-  };
+  // $scope.goToEditView = (id) => {
+  //     $location.path(`/editBoards/${id}`);
+  //   };
 
 });

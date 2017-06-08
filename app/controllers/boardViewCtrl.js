@@ -17,7 +17,7 @@ app.controller("BoardViewCtrl", function ($scope, DataFactory, $routeParams, $lo
     });
 
     $scope.goToEditView = (id) => {
-      $location.path(`/editBoards/${id}`);
+      $location.path(`/editPin/${id}`);
     };
 
 

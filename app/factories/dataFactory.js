@@ -33,7 +33,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 	const editPin = (pinID, editedPinObj) => {
 		return $q((resolve, reject) => {
 			let newObj = JSON.stringify(editedPinObj);
-			$http.path(`${FBCreds.databaseURL}/pins/${pinID}.json`, newObj)
+			$http.patch(`${FBCreds.databaseURL}/pins/${pinID}.json`, newObj)
 			.then((pinObj) => {
 				resolve(pinObj);
 			})
@@ -58,7 +58,7 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 
 	const getPin = (pinID) => {
 		return $q((resolve, reject) => {
-			$http.get(`${FBCreds.databaseURL}/items/${pinID}.json`)
+			$http.get(`${FBCreds.databaseURL}/pins/${pinID}.json`)
 			.then((pinObj) => {
 				pinObj.data.id= pinID;
 				resolve(pinObj.data);
@@ -122,10 +122,10 @@ app.factory("DataFactory", function($q, $http, FBCreds) {
 		});
 	};
 
-	const editYourBoard = ( boardID, editedboardObj ) => {
+	const editYourBoard = (editedboardObj ) => {
 		return $q( ( resolve, reject ) => {
 			let newObj = JSON.stringify(editedboardObj);
-			$http.patch(`${FBCreds.databaseURL}/boards/${boardID}.json`, newObj)
+			$http.patch(`${FBCreds.databaseURL}/boards/${editedboardObj.id}.json`, newObj)
 			.then( ( response ) => {
 				resolve(response);
 			})
