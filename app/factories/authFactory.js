@@ -55,6 +55,15 @@ let authWithProvider= function(){
     return firebase.auth().signInWithPopup(provider);
 };
 
+// let user = firebase.auth().currentUser;
+// let name, uid;
+//
+// if(user !==  null){
+//   name = user.displayName;
+//   uid = user.uid;
+// }
+//
+// console.log("user name", name + "user uid", uid);
 
 return {createUser, loginUser, logoutUser, isAuthenticated, getUser, authWithProvider};
 
