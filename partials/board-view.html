@@ -1,9 +1,10 @@
-<h2 class="page-header">Pintered Boards</h2>
+<!-- <h2 class="page-header">Pintered Boards</h2>
 
 <div ng-repeat="pin in pins">
   <div class="col-md-5 cold-md-offset-1">
-    <div class="panel panel-default">
+    <div class="panel panel-default" >
       <a ng-href="#!/pin/{{pin.id}}"><div class="panel-body">
+        <image ng-src="'{{pin.image}}'"></image>
         <h3>{{pin.title}}</h3>
         <h4>{{pin.description}}</h4>
       </div></a>
@@ -13,8 +14,28 @@
   </div>
 </div>
 <div class="panel panel-default" >
-      <button><a href="#!/addPin/{{boardId}}">
+      <button id=""><a href="#!/addPin/{{boardId}}">
         Create Pin
       </a>
       </button>
-</div>
+</div> -->
+<a href="#!/createpin/{{pin.id}}" class="waves-effect waves-light btn-large">Create Pin</a>
+  <div class="row" ng-repeat="pin in pins">
+    <div class="col s12 m6">
+     <div class="card">
+    
+        <div class="card-image">
+          <a ng-href="#!/pin/{{pin.id}}"><img ng-src="{{pin.image}}"></a>
+          <!-- <span class="card-title black-text">{{pin.title}}</span> -->
+          <a class="btn-floating btn-small red" href="#!/editPin/{{pin.id}}">
+      <i class="medium material-icons">Edit</i>
+          </a>
+          </div>
+          </a>
+        <div class="card-content">
+          <h3>{{pin.title}}</h3>
+        </div>
+          <a class="btn-floating halfway-fab waves-effect waves-light red" ng-click="delPin(pin.id)"><i class="material-icons">Delete</i></a>
+      </div>
+    </div>
+  </div>

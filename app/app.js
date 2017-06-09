@@ -18,8 +18,8 @@ let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
 app.config( ($routeProvider) => {
 	$routeProvider
 	.when('/', {
-		templateUrl: 'partials/board-view.html',
-		controller: 'UserViewCtrl'
+		templateUrl: 'partials/all-pins.html',
+		controller: 'takePinCtrl'
 	})
 	.when('/login', {
 		templateUrl: 'partials/auth.html',
@@ -42,6 +42,10 @@ app.config( ($routeProvider) => {
 	.when('/boards/:boardID', {
 		templateUrl: 'partials/board-view.html',
 		controller: 'BoardViewCtrl'/*
+		resolve: {isAuth}*/
+	}).when('/pins', {
+		templateUrl: 'partials/all-pins.html',
+		controller: 'AllPinsCtrl'/*,
 		resolve: {isAuth}*/
 	})
 	.when('/pin/:pinID', {
@@ -67,6 +71,11 @@ app.config( ($routeProvider) => {
 	.when('/editPin/:pinID', {
 		templateUrl: 'partials/add-editForm.html',
 		controller: 'EditPinCtrl'/*,
+		resolve: {isAuth}*/
+	})
+	.when('/takePin/:pinID', {
+		templateUrl: 'partials/takePin.html',
+		controller: 'TakePinCtrl'/*,
 		resolve: {isAuth}*/
 	})
 	.when('/createBoard', {
