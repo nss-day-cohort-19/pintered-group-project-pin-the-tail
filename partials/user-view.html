@@ -23,8 +23,8 @@
 </div> -->
       
 <a href="#!/createBoard/{{boardId}}" class="waves-effect waves-light btn-large">Create Board</a>
-<div class="row" ng-repeat="board in boards">
-	<div class="col s12 m6">
+<div class="row">
+	<div class="col s12 m6 l3" ng-repeat="board in boards">
 		<div class="card">
 			<div class="card-image">
 			<a ng-href="#!/boards/{{board.id}}"><image ng-src="{{board.image}}"></a>
