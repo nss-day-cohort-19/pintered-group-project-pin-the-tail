@@ -19,7 +19,7 @@ app.config( ($routeProvider) => {
 	$routeProvider
 	.when('/', {
 		templateUrl: 'partials/all-pins.html',
-		controller: 'takePinCtrl'
+		controller: 'TakePinCtrl'
 	})
 	.when('/login', {
 		templateUrl: 'partials/auth.html',
