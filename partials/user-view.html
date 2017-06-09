@@ -1,4 +1,4 @@
-
+<!-- 
 <h2>Pintered Boards</h2>
 
 <div ng-repeat="board in boards">
@@ -8,7 +8,7 @@
         <h3>{{board.title}}</h3>
         <h4>{{board.description}}</h4>
       </div></a>
-	  <!--<button ng-click="goToEditView(board.id)">Edit Board</button>-->
+	  <button ng-click="goToEditView(board.id)">Edit Board</button>
 	  <button><a ng-href="#!/editBoard/{{board.id}}">Edit Board</a></button>
 	  <button ng-click="delBoard(board.id)">Delete Board</button>
     </div>
@@ -20,5 +20,23 @@
       </div>
       </a>
       </button>
+</div> -->
+      
+<a href="#!/createBoard/{{boardId}}" class="waves-effect waves-light btn-large">Create Board</a>
+<div class="row" ng-repeat="board in boards">
+	<div class="col s12 m6">
+		<div class="card">
+			<div class="card-image">
+			<a ng-href="#!/boards/{{board.id}}"><image ng-src="{{board.image}}"></a>
+			<!-- <span class="card-title black-text">{{board.title}}</span> -->
+			<a class="btn-floating btn-small red" href="#!/editboard/{{board.id}}">
+			<i class="medium material-icons">Edit</i>
+			</a>
+			</div>
+			<div class="card-content">
+			<h3>{{board.title}}</h3>
+			</div>
+		<a class="btn-floating halfway-fab waves-effect waves-light red" ng-click="delboard(board.id)"><i class="material-icons">Delete</i></a>
+		</div>
+	</div>
 </div>
-
